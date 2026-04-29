@@ -1,12 +1,21 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 
+// 🔐 Read from env
 const firebaseConfig = {
-  apiKey: "AIzaSyBU9J3vmHfTv7Qcq9SMdtje2oW45HuHmVY",
-  authDomain: "raga-healthcare-a6a96.firebaseapp.com",
-  projectId: "raga-healthcare-a6a96",
-  appId: "1:115517395698:web:6df41fe52fe77ef28bb66b",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Auth
 export const auth = getAuth(app);
+
+// 🔥 Persist login even after refresh
+setPersistence(auth, browserLocalPersistence)
+  .then(() => console.log("Auth persistence set"))
+  .catch((err) => console.error("Persistence error:", err));
