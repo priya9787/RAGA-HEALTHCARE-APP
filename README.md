@@ -2,8 +2,8 @@
 
 A modern **B2B Healthcare SaaS frontend application** built using React + TypeScript, demonstrating scalable architecture, real-world features, and clean UI/UX.
 
-🚀 **Live Demo:** *[Add your Vercel/Netlify link here]*
-📦 **GitHub Repo:** *[Add your repo link here]*
+🚀 **Live Demo:** *https://raga-healthcare-app.netlify.app/*
+📦 **GitHub Repo:** *https://github.com/priya9787/RAGA-HEALTHCARE-APP*
 
 ---
 
